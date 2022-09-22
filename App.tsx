@@ -7,7 +7,7 @@
  *
  * @format
  */
-
+import SplashScreen from 'react-native-splash-screen';
 import React, {type PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -63,6 +63,12 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 500);
+  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
